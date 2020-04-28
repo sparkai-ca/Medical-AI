@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body {
+  background-image: url('static/main_image.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+{% block app_styles %}{% endblock  %}
+</style>
+
+<head>
+	<title> {% block app_head %}{% endblock  %} </title>
+</head>
+
+<body>
+{% block app_body %}{% endblock  %}
+</body>
+
+{% block app_js %}{% endblock  %}
+
+</html>

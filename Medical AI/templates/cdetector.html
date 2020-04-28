@@ -1,0 +1,27 @@
+{% extends 'detectors_template.html' %}
+
+{% block app_head %}<title>  Cancer Detection </title>{% endblock %}
+
+{% block app_form %}
+	<div align="center">
+		<form id="img_form" action="{{url_for('cd')}}" method="POST" enctype="multipart/form-data">
+			<input style="color: white; margin: 2.5%" type="file" name="file">
+			<br />
+			<input id="sbmt" value="Detect Cancer" type="submit" style="border-radius: 50%; font-size: 200%; padding: 1% 1%; background-color: white; color: green;              outline: none;" onclick="checkInput(id)" onmouseover="hoverFunction1(id)" onmouseout="hoverFunction2(id)">
+		</form>
+	</div>
+{% endblock %}
+
+{% block app_script %}
+<script type="text/javascript">
+	let img = document.querySelector('#_img_');
+	img.addEventListener('load', (event) => {
+	    img.style.visibility = 'visible';
+	    document.getElementById('img_h1').innerText = 'Cancer Detected !';
+	});
+	img.addEventListener('error', (event) => {
+	    img.style.visibility = 'hidden';
+	    document.getElementById('img_h1').innerText = 'Nothing Detected yet, Try with a MRI image of brain !';
+	});
+</script>
+{% endblock %}

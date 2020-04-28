@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Medical AI</title>
+	</head>
+	<body>
+		<video id='video' height="100%" width="100%" muted autoplay playsinline>
+			<source src="static/splash_video.mp4"  type="video/mp4">
+			<source src="static/splash_video.webm" type="video/webm">
+			<source src="static/splash_video.ogv"  type="video/ogg">
+			<source src="static/splash_video.flv"  type="video/flv">
+			Your browser does not support the video tag.
+		</video>
+	</body>
+	<script type="text/javascript">
+		var x = document.getElementById('video');
+		x.addEventListener('loadedmetadata', function(evt) {
+		if(evt.target.duration === 0) {
+			window.location.href = '/index';
+		} else {
+			console.log("video ok")
+		}
+		});
+		x.addEventListener('error', function(evt) {
+			alert("Error, The video cannot be played");
+			window.location.href = '/index';
+		});
+		x.addEventListener('ended', (event) => {
+			window.location.href = '/index';
+		});
+	</script>
+</html>

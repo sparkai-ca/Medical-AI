@@ -1,0 +1,79 @@
+{% extends 'base_template.html' %}
+
+{% block app_styles %}
+.div0 {
+	margin-right: 5%;
+}
+.div1 {
+	margin-top: 12%;
+}
+.div2 {
+	margin-top: 5%;
+}
+.div3 {
+	margin-top: 5%;
+}
+a {
+	background-color: green;
+  	border: solid 3px yellow;
+    outline: none;
+  	border-radius: 50%;
+  	color: white;
+  	padding: 1% 1%;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 160%;
+  	height: 10%;
+  	width: 22%;
+  	align: left;
+}
+{% endblock  %}
+
+{% block app_head %} Medical AI {% endblock  %}
+
+
+{% block app_body %}
+<h1 align="right" style="color:white; margin:2%;"> Medical AI </h1>
+<div align="right" class="div0">
+	<div class="div1">
+		<a href="CancerDetector" type="button" id="btn1" onclick="urlFunction(id)" onmouseover="hoverFunction1(id)" onmouseout="hoverFunction2(id)">
+			Cancer Detection
+		</a>
+	</div>
+	<div class="div2">
+		<a href="CellsTypeDetector" type="button" id="btn2" onclick="urlFunction(id)" onmouseover="hoverFunction1(id)" onmouseout="hoverFunction2(id)">
+			Cells Type Detection
+		</a>
+	</div>
+	<div class="div3">
+		<a href="PneumoniaDetector" type="button" id="btn3" onclick="urlFunction(id)" onmouseover="hoverFunction1(id)" onmouseout="hoverFunction2(id)">
+			Pneumonia Detection
+		</a>
+	</div>
+</div>
+{% endblock  %}
+
+{% block app_js %}
+<script type="text/javascript">
+
+function hoverFunction1(id) {
+	document.getElementById(id).style.background = "lightgreen";
+}
+function hoverFunction2(id) {
+	document.getElementById(id).style.background = "green";
+}
+function urlFunction(id) {
+	document.getElementById(id).style.background = "green"
+	if(id=="btn1"){
+		window.location.assign("ctdetector.html")
+	}
+	if(id=="btn2"){
+		window.location.assign("ctdetector.html")
+	}
+	if(id=="btn3"){
+		window.location.assign("pdetector.html")
+	}
+}
+</script>
+{% endblock  %}

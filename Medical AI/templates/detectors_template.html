@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		{% block app_head %}{% endblock %}
+	</head>
+
+	<body style="background-color: green">
+		<div align="right">
+			<a href="/index"> 
+				<button id="home" style="border-radius: 10%; font-size: 200%; background-color: white; color: green; margin:1%;" onmouseover="hoverFunction1(id)"                        onmouseout="hoverFunction2(id)"> 
+					HOME 
+				</button>
+			</a>
+		</div>
+
+		{% block app_form %}{% endblock %}
+
+		<div  align="center" style="margin: 5%;">
+			<h1 id='img_h1' style="{{txt_clr}}"> {{detection}}<br />{{info}} </h1>
+			<br />
+			<image id="_img_" style="border-width: 0px; border-color: green;" src="data:;base64,{{ image }}" height=60% width=60% >		
+		</div>
+	</body>
+
+	{% block app_script %}{% endblock %}
+
+	<script type="text/javascript">
+		function hoverFunction1(id) {
+			document.getElementById(id).style.background = "lightgreen";
+		}
+		function hoverFunction2(id) {
+			document.getElementById(id).style.background = "white";
+		}
+		function checkInput(id) {
+			if(document.getElementsByName("file")[0].value == '')
+				alert('Please Choose an Image as input from above !');
+		}
+	</script>
+
+</html>
