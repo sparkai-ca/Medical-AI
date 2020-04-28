@@ -1,0 +1,17 @@
+flask
+numpy
+scikit-image
+keras==2.1.6
+opencv-python
+werkzeug
+pillow
+tensorflow==1.14.0
+h5py
+matplotlib
+colorsys
+logging
+warnings
+distutils
+IPython[all]
+cython
+imgaug
