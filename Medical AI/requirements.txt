@@ -5,7 +5,7 @@ keras==2.1.6
 opencv-python
 werkzeug
 pillow
-tensorflow==1.14.0
+tensorflow==2.9.3
 h5py
 matplotlib
 colorsys
